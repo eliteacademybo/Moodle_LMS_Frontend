@@ -74,43 +74,66 @@ export default function AppSidebar() {
                 </div>
             </aside>
 
-            <nav className="fixed bottom-3 left-1/2 z-50 w-[calc(100%-1.25rem)] max-w-md -translate-x-1/2 md:hidden">
-                <div
-                    className="grid w-full items-center rounded-[1.75rem] border border-border/70 bg-background/95 p-1.5 shadow-xl backdrop-blur-xl"
-                    style={{
-                        gridTemplateColumns: `repeat(${Math.max(
-                            visibleMenuItems.length,
-                            1,
-                        )}, minmax(0, 1fr))`,
-                    }}
-                >
-                    {visibleMenuItems.map((item) => {
-                        const active = isActive(item.url);
+            <nav className="fixed bottom-3 left-0 z-50 w-full px-3 md:hidden">
+                <div className="relative mx-auto max-w-full">
+                    <div
+                        className="
+                            flex
+                            w-full
+                            items-center
+                            gap-1.5
+                            overflow-x-auto
+                            rounded-[1.75rem]
+                            border
+                            border-border/70
+                            bg-background/95
+                            p-1.5
+                            shadow-xl
+                            backdrop-blur-xl
+                            scrollbar-none
+                        "
+                    >
+                        {visibleMenuItems.map((item) => {
+                            const active = isActive(item.url);
 
-                        return (
-                            <Link
-                                key={item.url}
-                                to={item.url}
-                                title={item.title}
-                                aria-label={item.title}
-                                className="flex h-12 min-w-0 items-center justify-center"
-                            >
-                                <span
+                            return (
+                                <Link
+                                    key={item.url}
+                                    to={item.url}
+                                    title={item.title}
+                                    aria-label={item.title}
                                     className={[
-                                        "flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200",
+                                        "flex h-12 min-w-[52px] shrink-0 items-center justify-center rounded-full transition-all duration-200",
                                         active
                                             ? "bg-primary text-primary-foreground shadow-sm"
                                             : "text-muted-foreground active:bg-muted active:text-foreground",
                                     ].join(" ")}
                                 >
-                                    <FontAwesomeIcon
-                                        icon={item.icon}
-                                        className="h-[17px] w-[17px]"
-                                    />
-                                </span>
-                            </Link>
-                        );
-                    })}
+                                    <span
+                                        className={[
+                                            "flex h-10 w-10 items-center justify-center rounded-full",
+                                            active
+                                                ? "bg-primary"
+                                                : "",
+                                        ].join(" ")}
+                                    >
+                                        <FontAwesomeIcon
+                                            icon={item.icon}
+                                            className="h-[17px] w-[17px]"
+                                        />
+                                    </span>
+                                </Link>
+                            );
+                        })}
+                    </div>
+
+                    {visibleMenuItems.length > 5 && (
+                        <div className="pointer-events-none absolute right-0 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-end rounded-r-[1.5rem] bg-gradient-to-l from-background/95 to-transparent">
+                            <span className="mr-2 text-xs text-muted-foreground">
+                                →
+                            </span>
+                        </div>
+                    )}
                 </div>
             </nav>
         </>
