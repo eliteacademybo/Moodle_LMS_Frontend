@@ -53,13 +53,6 @@ export function Footer() {
         },
     ];
 
-    const legal = [
-        {
-            name: "Política de privacidad",
-            href: "/politica-de-privacidad",
-        },
-    ];
-
     return (
         <footer className="relative border-t border-border bg-background">
             <div className="px-5 pb-8 pt-16 sm:px-8 sm:pb-10 sm:pt-20 lg:px-[50px] lg:pb-12 lg:pt-24">
@@ -253,22 +246,12 @@ export function Footer() {
                         </p>
 
                         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 sm:justify-end lg:gap-x-6">
-                            {legal.map(
-                                (item) => (
-                                    <Link
-                                        key={
-                                            item.name
-                                        }
-                                        to={
-                                            item.href
-                                        }
-                                        className="transition-colors hover:text-foreground"
-                                    >
-                                        {item.name}
-                                    </Link>
-                                )
-                            )}
-
+                            <a
+                                href="https://elaceslatam.com/politica-de-privacidad"
+                                className="transition-colors hover:text-foreground"
+                            >
+                                Política de privacidad
+                            </a>
                         </div>
                     </div>
                 </div>
