@@ -8,20 +8,6 @@ import {
 export const ModulePlatformVideo = () => {
     return (
         <Card className="overflow-hidden rounded-2xl sm:rounded-3xl">
-            <div className="relative aspect-video overflow-hidden bg-muted">
-                <video
-                    controls
-                    preload="metadata"
-                    poster="/videos/plataforma-poster.webp"
-                    className="h-full w-full object-cover"
-                >
-                    <source
-                        src="/videos/como-funciona-plataforma.mp4"
-                        type="video/mp4"
-                    />
-                </video>
-            </div>
-
             <CardContent className="p-5 sm:p-6">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
                     <Play className="size-4" />

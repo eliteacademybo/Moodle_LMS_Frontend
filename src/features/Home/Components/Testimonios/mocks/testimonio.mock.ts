@@ -12,7 +12,7 @@ export const TESTIMONIOS: Testimonio[] = [
         resultado: "Fortaleció su formación profesional",
         media: {
             tipo: "video",
-            src: "/testimonios/primero.webm",
+            src: "/testimonios/primero.mp4",
             poster: "/testimonios/primero.webp",
         },
     },
@@ -37,7 +37,7 @@ export const TESTIMONIOS: Testimonio[] = [
         resultado: "Amplió sus conocimientos en estética",
         media: {
             tipo: "video",
-            src: "/testimonios/tercero.webm",
+            src: "/testimonios/tercero-720.mp4",
             poster: "/testimonios/tercero.webp",
         },
     },
