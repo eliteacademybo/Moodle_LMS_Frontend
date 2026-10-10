@@ -3,7 +3,7 @@ import { Testimonio } from "../types/testimonio";
 export const TESTIMONIOS: Testimonio[] = [
     {
         id: "1",
-        nombre: "María Fernanda",
+        nombre: "Karla Olañeta",
         pais: "BO",
         profesion: "Estudiante de Cosmetología",
         testimonio:
@@ -28,7 +28,7 @@ export const TESTIMONIOS: Testimonio[] = [
     },
     {
         id: "3",
-        nombre: "Valeria Rojas",
+        nombre: "Denisse Andrade",
         pais: "BO",
         profesion: "Cosmetóloga",
         testimonio:
